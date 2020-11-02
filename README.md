@@ -2,7 +2,7 @@
 
 <img src="https://repository-images.githubusercontent.com/299765862/ef7f3600-02c0-11eb-937e-b514287f7049" />
 
-## 2.0.7 Modified for Artillery Sidewinder X1
+## 2.0.7.2 Modified for Artillery Sidewinder X1
 
 - BTT SKR 1.4 Turbo
 - TMC2209 Stepper Drivers (set to .950)
@@ -13,7 +13,10 @@
 - Baudrate set to 115200 (TFT and Board must match!)
 - HE1 set to FAN1_PIN
 
+Important: you'll need to cut/bend the DIAG pin on both z-axis drivers so the z-endstop will work properly! Additionally, you'll have to set your personal stall sensitivity for x and y. Review my working settings with [M914](https://marlinfw.org/docs/gcode/M914.html) and dial your individual ones in.
+
 Recommended: [TFT Firmware by digant](https://www.thingiverse.com/thing:4294049)
+You will need to modify the supplied config.ini to 115200 baud. I've decided to have a slower but more reliable serial speed. Board firmware matches the requirements of the display firmware.
 
 Before uploading the firmware, review your individual settings with M503 and store them in a textfile. Transfer PID-values, steps, threshold to Configuration.h. After uploading the firmware to your board, please reset to factory defaults (M502) and store the values (M500).
 
